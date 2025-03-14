@@ -1,0 +1,86 @@
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-800 text-gray-300 py-8 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Kompaniya haqida */}
+          <div className="space-y-4">
+            <h3 className="text-lg md:text-xl font-bold text-white">About Us</h3>
+            <p className="text-sm md:text-base">
+              We are a company dedicated to providing amazing experiences and top-quality services.
+            </p>
+            <div className="flex space-x-4">
+              <a href="#" className="hover:text-white transition duration-300">
+                <FaFacebookF className="w-5 h-5" />
+              </a>
+              <a href="#" className="hover:text-white transition duration-300">
+                <FaTwitter className="w-5 h-5" />
+              </a>
+              <a href="#" className="hover:text-white transition duration-300">
+                <FaInstagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="hover:text-white transition duration-300">
+                <FaLinkedinIn className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Navigatsiya */}
+          <div className="space-y-4">
+            <h3 className="text-lg md:text-xl font-bold text-white">Quick Links</h3>
+            <ul className="space-y-2 text-sm md:text-base">
+              <li>
+                <a href="/" className="hover:text-white transition duration-300">Home</a>
+              </li>
+              <li>
+                <a href="/about" className="hover:text-white transition duration-300">About</a>
+              </li>
+              <li>
+                <a href="/services" className="hover:text-white transition duration-300">Services</a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-white transition duration-300">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Kontaktlar */}
+          <div className="space-y-4">
+            <h3 className="text-lg md:text-xl font-bold text-white">Contact Us</h3>
+            <ul className="space-y-2 text-sm md:text-base">
+              <li>Email: furqat.ergashev@davangroup.uz</li>
+              <li>Phone: <p>(+998) (99) 380 8000</p>
+              <p>(+998) (99) 335 4004</p></li>
+              <li>Address: City Navoiy, street Memorlar 83</li>
+            </ul>
+          </div>
+
+          {/* Qo‘shimcha ma'lumot */}
+          <div className="space-y-4">
+            <h3 className="text-lg md:text-xl font-bold text-white">Newsletter</h3>
+            <p className="text-sm md:text-base">Subscribe to our newsletter for updates.</p>
+            <form className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                className="px-4 py-2 rounded-md text-gray-900 text-sm md:text-base focus:outline-none"
+              />
+              <button className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition duration-300 text-sm md:text-base">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Pastki qism */}
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm md:text-base">
+          <p>&copy; {new Date().getFullYear()} Davan Group. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
