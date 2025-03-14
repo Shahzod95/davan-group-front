@@ -31,6 +31,7 @@ const Hero = () => {
 
   return (
     <motion.section
+      id="hero"
       className="relative h-screen w-full overflow-hidden"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}

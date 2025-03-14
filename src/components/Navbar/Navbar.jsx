@@ -33,7 +33,7 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { id: 1, text: "Home", path: "/" },
+    { id: 1, text: "Home", path: "#hero" },
     { id: 2, text: "About", path: "#about" },
     { id: 3, text: "Collection", path: "#collection" },
     { id: 4, text: "How it works", path: "#how-it-works" },
