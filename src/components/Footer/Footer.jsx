@@ -1,6 +1,26 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const Footer = () => {
+
+  const navItems = [
+    { id: 1, text: "Home", path: "#hero" },
+    { id: 2, text: "About", path: "#about" },
+    { id: 3, text: "Collection", path: "#collection" },
+    { id: 4, text: "How it works", path: "#how-it-works" },
+    { id: 5, text: "Our partners", path: "#our-partners" },
+    { id: 6, text: "Contact", path: "#contact" },
+  ];
+
+  const handleScroll = (event, targetId) => {
+    event.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const offset = 50; // 50px pastga tushirish uchun
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+      // targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <footer className="bg-gray-800 text-gray-300 py-8 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,18 +51,18 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg md:text-xl font-bold text-white">Quick Links</h3>
             <ul className="space-y-2 text-sm md:text-base">
-              <li>
-                <a href="/" className="hover:text-white transition duration-300">Home</a>
+              {
+                navItems.map((item) => (
+                  <li key={item.id}>
+                <a 
+                  href={item.path}
+                  onClick={(e) => handleScroll(e, item.path)} 
+                  className="hover:text-white transition duration-300">
+                    {item.text}
+                  </a>
               </li>
-              <li>
-                <a href="/about" className="hover:text-white transition duration-300">About</a>
-              </li>
-              <li>
-                <a href="/services" className="hover:text-white transition duration-300">Services</a>
-              </li>
-              <li>
-                <a href="/contact" className="hover:text-white transition duration-300">Contact</a>
-              </li>
+                ))
+              }
             </ul>
           </div>
 
