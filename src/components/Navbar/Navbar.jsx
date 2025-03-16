@@ -37,14 +37,18 @@ const Navbar = () => {
     { id: 2, text: "About", path: "#about" },
     { id: 3, text: "Collection", path: "#collection" },
     { id: 4, text: "How it works", path: "#how-it-works" },
-    { id: 5, text: "Contact", path: "#contact" },
+    { id: 5, text: "Our partners", path: "#our-partners" },
+    { id: 6, text: "Contact", path: "#contact" },
   ];
 
   const handleScroll = (event, targetId) => {
     event.preventDefault();
     const targetElement = document.querySelector(targetId);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      const offset = 50; // 50px pastga tushirish uchun
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+      // targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
   

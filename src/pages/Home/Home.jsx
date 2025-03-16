@@ -13,6 +13,17 @@ import HowItWorks from '../../components/HowItWorks/HowItWorks'
 import Basket from '../../components/Basket/Basket'
 
 export const Home = () => {
+
+  const handleScroll = (event, targetId) => {
+    event.preventDefault();
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const offset = 50; // 50px pastga tushirish uchun
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: elementPosition - offset, behavior: "smooth" });
+      // targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
@@ -39,15 +50,15 @@ export const Home = () => {
               Contact our team today to discuss your equipment rental needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/contact" 
+              <a 
+                onClick={(e) => handleScroll(e, '#contact')}
                 className="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-md text-lg transition-colors inline-flex items-center justify-center"
               >
                 Request a Quote
                 <FaArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </a>
               <a 
-                href="tel:+15551234567" 
+                href="tel:+998993800000" 
                 className="bg-white hover:bg-gray-100 text-gray-900 font-bold py-4 px-8 rounded-md text-lg transition-colors inline-flex items-center justify-center"
               >
                 Call Us Now

@@ -22,6 +22,7 @@ const Partners = () => {
 
   return (
     <motion.section 
+        id='our-partners'
         className="py-8 md:py-12 bg-white"
         initial="hidden"
         whileInView="visible"
