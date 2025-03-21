@@ -6,6 +6,7 @@ import { Cars } from "./pages/Cars/Cars";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import { Category } from "./pages/Category/Category";
 import { CartProvider } from "./context/CarProvider";
+import { News } from "./pages/News/News";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function App() {
             <Route element={<Dashboard />}>
               <Route index path="/dashboard" element={<Cars />} />
               <Route index path="/category" element={<Category />} />
+              <Route index path="/news" element={<News />} />
             </Route>
           </Routes>
         </Router>

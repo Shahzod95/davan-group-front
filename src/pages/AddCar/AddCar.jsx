@@ -236,8 +236,6 @@ export default function AddCarModal({ isOpen, onClose, car }) {
     onClose();
   };
 
-  console.log("Data ", carData);
-
   return (
     <AnimatePresence>
       {/* Modal Overlay */}
